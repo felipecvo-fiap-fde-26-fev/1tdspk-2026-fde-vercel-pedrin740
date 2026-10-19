@@ -80,7 +80,7 @@ export default function ListaChamados() {
                 </tr>)}</tbody>
               </table>
             </div>
-            {carregando && <div className="estado-lista" role="status">Carregando chamados...</div>}
+            {carregando && <div className="estado-lista" role="status">Carregando os chamados...</div>}
             {erro && <div className="estado-lista" role="alert"><p>Não foi possível carregar os chamados.</p><small>{erro}</small><button className="botao secundario" onClick={() => setTentativas((n) => n + 1)}>Tentar novamente</button></div>}
             {!carregando && !erro && chamadosVisiveis.length === 0 && <div className="estado-lista"><Icone nome="ticket" tamanho={28} /><p>{chamados.length === 0 ? "Nenhum chamado cadastrado ainda." : "Nenhum chamado corresponde à busca."}</p><small>{chamados.length === 0 ? "Crie o primeiro chamado para começar." : "Tente outro termo ou filtro."}</small></div>}
           </div>
